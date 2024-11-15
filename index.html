@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Clock</title>
-    <link rel="stylesheet" href="src/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
     <header>
-        <h1>World Clock</h1>
+      <h1>World Clock</h1>
+      <select name="city" id="cities">
+        <option value="#">Select a city</option>
+        <option value="#">Yangon</option>
+        <option value="#">Bangkok</option>
+        <option value="#">Soul</option>
+        <option value="#">Tokyo</option>
+      </select>
     </header>
     <main>
-        
+      <div class="city">
+        <div class="cityInfo">
+          <h2 class="city-name">Yangon</h2>
+          <span class="date">November 15, 2024</span>
+        </div>
+        <div class="city-time">
+          <h2>6 : 41 PM</h2>
+        </div>
+      </div>
+
+      <div class="city">
+        <div class="cityInfo">
+          <h2 class="city-name">Bangkok</h2>
+          <span class="date">November 15, 2024</span>
+        </div>
+        <div class="city-time">
+          <h2>6 : 41 PM</h2>
+        </div>
+      </div>
     </main>
     <footer>
-        This porject is coded by <a href="https://github.com/AkiKyaw">Ei Ei Kyaw</a> and is open-sourced on <a href="https://github.com/AkiKyaw/worldClockApp">Git Hub</a>
+      This porject is coded by
+      <a href="https://github.com/AkiKyaw">Ei Ei Kyaw</a> and is open-sourced on
+      <a href="https://github.com/AkiKyaw/worldClockApp">Git Hub</a> <br />
+      and hosted on <a href="https://checktimebuddy.netlify.app/">Netlify</a>
     </footer>
     <script src="src/index.js"></script>
-</body>
+  </body>
 </html>
