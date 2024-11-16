@@ -10,6 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data-1970-2030.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
@@ -27,23 +29,23 @@
       <main>
         <div class="city">
           <div class="cityInfo">
-            <h2 class="city-name">Yangon</h2>
-            <span class="date">November 15, 2024</span>
+            <h2 class="city-name" id="ygnCity">Yangon</h2>
+            <span class="date" id="ygnDate">November 15th, 2024</span>
           </div>
           <div class="city-time">
-            <h2>6 : 41</h2>
-            <span class="AM">PM</span>
+            <h2 id="ygnTime">6 : 30 : 34</h2>
+            <span class="AM" id="ygnAM">AM</span>
           </div>
         </div>
 
         <div class="city">
           <div class="cityInfo">
-            <h2 class="city-name">Bangkok</h2>
-            <span class="date">November 15, 2024</span>
+            <h2 class="city-name" id="bkkCity">Bangkok</h2>
+            <span class="date" id="bkkDate">November 15th, 2024</span>
           </div>
           <div class="city-time">
-            <h2>6 : 41</h2>
-            <span class="AM">PM</span>
+            <h2 id="bkkTime">7 : 00 : 34</h2>
+            <span class="AM" id="bkkAM">PM</span>
           </div>
         </div>
       </main>
