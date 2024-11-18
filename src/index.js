@@ -1,19 +1,23 @@
-function updateTime(){
-YgnTimezone = moment.tz("Asia/Rangoon");
+function updateTime() {
+  yourCity = moment.tz.guess();
+  yourTimezone = moment.tz(`${yourCity}`);
 
-let YgnTimeElement = document.querySelector("#ygnTime");
-let YgnDateElement = document.querySelector("#ygnDate");
-let YgnAMElement = document.querySelector("#ygnAM");
-YgnDateElement.innerHTML = YgnTimezone.format("MMMM Do, YYYY");
-YgnTimeElement.innerHTML = YgnTimezone.format("h : mm : ss");
-YgnAMElement.innerHTML = YgnTimezone.format("a");
+  let yourCityNameElement = document.querySelector("#City");
+  let yourTimeElement = document.querySelector("#Time");
+  let yourDateElement = document.querySelector("#Date");
+  let yourAMElement = document.querySelector("#AM");
+  yourCityNameElement.innerHTML = yourCity.replace("_", " ").split("/")[1];
+  yourDateElement.innerHTML = yourTimezone.format("MMMM Do, YYYY");
+  yourTimeElement.innerHTML = yourTimezone.format("h : mm : ss");
+  yourAMElement.innerHTML = yourTimezone.format("a");
 }
 
-setInterval(updateTime,1);
+setInterval(updateTime, 1000);
 
-function addNewTimezone(event){
-    let timeZoneName = event.target.value;
-    let timeZone = moment.tz(`${timeZoneName}`);
+function addNewTimezone(event) {
+  let timeZoneName = event.target.value;
+  if (timeZoneName.length > 0) {
+    timeZone = moment.tz(`${timeZoneName}`);
     let cityName = timeZoneName.replace("_", " ").split("/")[1];
     let display = document.querySelector(".cities-container");
     display.innerHTML += `
@@ -28,9 +32,9 @@ function addNewTimezone(event){
           </div>
     </div>
     `;
+  }
 }
 
 let selectedCityElement = document.querySelector("#cities");
 
-selectedCityElement.addEventListener('change', addNewTimezone);
-
+selectedCityElement.addEventListener("change", addNewTimezone);
