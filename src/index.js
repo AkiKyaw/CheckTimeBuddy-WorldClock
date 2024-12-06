@@ -50,6 +50,22 @@ function addNewTimezone(event) {
   }, 100);
 }
 
+function populateTimezoneSelect() {
+  const timezones = moment.tz.names();
+  const selectElement = document.querySelector("#cities");
+
+  timezones.forEach((timezone) => {
+    if (timezone.includes("/")) {
+      const option = document.createElement("option");
+      option.value = timezone;
+      option.text = timezone.replace("_", " ").split("/")[1];
+      selectElement.appendChild(option);
+    }
+  });
+}
+
+populateTimezoneSelect();
+
 let selectedCityElement = document.querySelector("#cities");
 
 selectedCityElement.addEventListener("change", addNewTimezone);
